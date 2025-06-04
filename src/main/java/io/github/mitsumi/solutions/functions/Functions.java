@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.*;
 
+/**
+ * A utility class for functions.
+ */
 @NoArgsConstructor(staticName = "build")
 public class Functions {
 
@@ -411,6 +414,7 @@ public class Functions {
      * @param supplierT value supplier.
      * @param consumer action to perform.
      * @param <T> type of the supplier.
+     * @return the value from the specified supplier.
      */
     public <T> T accept(final Supplier<T> supplierT, final Consumer<T> consumer) {
         var value = supplierT.get();
