@@ -2,6 +2,27 @@
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
+# supported
+
+- java version: 21
+
+# dependency
+
+- maven
+
+  ```xml
+  <dependency>
+      <groupId>io.github.mitsumi-solutions-develop</groupId>
+      <artifactId>java-functions</artifactId>
+      <version>1.0.0</version>
+  </dependency>
+  ```
+
+- gradle
+
+  ```
+  implementation group: 'io.github.mitsumi-solutions-develop', name: 'java-functions', version: '1.0.0'
+  ```
 # supported functions
 
 - TriFunction
