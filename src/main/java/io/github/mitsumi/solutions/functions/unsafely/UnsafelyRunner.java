@@ -1,4 +1,4 @@
-package io.github.mitsumi.solutions.functions;
+package io.github.mitsumi.solutions.functions.unsafely;
 
 public interface UnsafelyRunner {
 
