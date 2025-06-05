@@ -1,9 +1,9 @@
-package io.github.mitsumi.solutions.functions;
+package io.github.mitsumi.solutions.shared.functions;
 
 import java.util.Objects;
 
 @FunctionalInterface
-public interface PentaConsumer<T, U, V, W, X> {
+public interface QuadConsumer<T, U, V, W> {
     /**
      * Performs this operation on the given arguments.
      *
@@ -11,9 +11,8 @@ public interface PentaConsumer<T, U, V, W, X> {
      * @param u the second input argument
      * @param v the third input argument
      * @param w the fourth input argument
-     * @param x the fifth input argument
      */
-    void accept(T t, U u, V v, W w, X x);
+    void accept(T t, U u, V v, W w);
 
     /**
      * Returns a composed function that first applies this function to
@@ -26,14 +25,12 @@ public interface PentaConsumer<T, U, V, W, X> {
      * applies the {@code after} function
      * @throws NullPointerException if after is null
      */
-    default PentaConsumer<T, U, V, W, X> andThen(
-        PentaConsumer<? super T, ? super U, ? super V, ? super W, ? super X> after
-    ) {
+    default QuadConsumer<T, U, V, W> andThen(QuadConsumer<? super T, ? super U, ? super V, ? super W> after) {
         Objects.requireNonNull(after);
 
-        return (t, u, v, w, x) -> {
-            accept(t, u, v, w, x);
-            after.accept(t, u, v, w, x);
+        return (t, u, v, w) -> {
+            accept(t, u, v, w);
+            after.accept(t, u, v, w);
         };
     }
 }

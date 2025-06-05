@@ -1,4 +1,4 @@
-package io.github.mitsumi.solutions.functions.unsafely;
+package io.github.mitsumi.solutions.shared.functions.unsafely;
 
 public interface UnsafelySupplier<T> {
 
