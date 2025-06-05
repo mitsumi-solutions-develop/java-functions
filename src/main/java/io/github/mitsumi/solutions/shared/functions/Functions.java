@@ -1,4 +1,4 @@
-package io.github.mitsumi.solutions.functions;
+package io.github.mitsumi.solutions.shared.functions;
 
 import lombok.NoArgsConstructor;
 
