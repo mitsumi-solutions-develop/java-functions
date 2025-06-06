@@ -3,7 +3,18 @@ package io.github.mitsumi.solutions.shared.functions;
 import java.util.Objects;
 import java.util.function.Function;
 
+/**
+ * Represents a function that accepts three arguments and produces a result.
+ *
+ * <p>This is a functional interface.
+ *
+ * @param <T> the type of the input to the function
+ * @param <U> the type of the input to the function
+ * @param <V> the type of the input to the function
+ * @param <R> the type of the result of the function
+ */
 @FunctionalInterface
+@SuppressWarnings({"PMD.ShortVariable", "PMD.CommentSize"})
 public interface TriFunction<T, U, V, R> {
     /**
      * Applies this function to the given arguments.
@@ -28,7 +39,7 @@ public interface TriFunction<T, U, V, R> {
      * applies the {@code after} function
      * @throws NullPointerException if after is null
      */
-    default <W> TriFunction<T, U, V, W> andThen(Function<? super R, ? extends W> after) {
+    default <W> TriFunction<T, U, V, W> andThen(final Function<? super R, ? extends W> after) {
         Objects.requireNonNull(after);
         return (T t, U u, V v) -> after.apply(apply(t, u, v));
     }
