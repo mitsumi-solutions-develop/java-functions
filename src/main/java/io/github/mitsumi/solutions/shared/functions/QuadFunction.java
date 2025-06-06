@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 /**
- * Represents a function that accepts four argument and produces a result.
+ * Represents a function that accepts four arguments and produces a result.
  *
  * <p>This is a functional interface.
  * whose functional method is {@link #apply(Object, Object, Object, Object)}.
@@ -15,6 +15,8 @@ import java.util.function.Function;
  * @param <W> the type of the input to the function
  * @param <R> the type of the result of the function
  */
+@FunctionalInterface
+@SuppressWarnings({"PMD.ShortVariable", "PMD.CommentSize"})
 public interface QuadFunction<T, U, V, W, R> {
 
 
@@ -42,7 +44,7 @@ public interface QuadFunction<T, U, V, W, R> {
      * applies the {@code after} function
      * @throws NullPointerException if after is null
      */
-    default <X> QuadFunction<T, U, V, W, X> andThen(Function<? super R, ? extends X> after) {
+    default <X> QuadFunction<T, U, V, W, X> andThen(final Function<? super R, ? extends X> after) {
         Objects.requireNonNull(after);
         return (T t, U u, V v, W w) -> after.apply(apply(t, u, v, w));
     }

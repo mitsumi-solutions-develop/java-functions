@@ -1,8 +1,24 @@
 package io.github.mitsumi.solutions.shared.functions;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
+/**
+ * Represents an operation that accepts three input arguments and returns no
+ * result.  This is the three-arity specialization of {@link Consumer}.
+ * Unlike most other functional interfaces, {@code TriConsumer} is expected
+ * to operate via side effects.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ *
+ * @param <T> the type of the first argument to the operation
+ * @param <U> the type of the second argument to the operation
+ * @param <V> the type of the third argument to the operation
+ *
+ * @see Consumer
+ */
 @FunctionalInterface
+@SuppressWarnings({"PMD.ShortVariable", "PMD.CommentSize"})
 public interface TriConsumer<T, U, V> {
     /**
      * Performs this operation on the given arguments.
@@ -23,7 +39,7 @@ public interface TriConsumer<T, U, V> {
      * applies the {@code after} function
      * @throws NullPointerException if after is null
      */
-    default TriConsumer<T, U, V> andThen(TriConsumer<? super T, ? super U, ? super V> after) {
+    default TriConsumer<T, U, V> andThen(final TriConsumer<? super T, ? super U, ? super V> after) {
         Objects.requireNonNull(after);
 
         return (t, u, v) -> {

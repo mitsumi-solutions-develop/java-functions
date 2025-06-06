@@ -2,7 +2,26 @@
 package io.github.mitsumi.solutions.shared.functions;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
+/**
+ * Represents an operation that accepts six input arguments and returns no
+ * result.  This is the six-arity specialization of {@link Consumer}.
+ * Unlike most other functional interfaces, {@code HexaConsumer} is expected
+ * to operate via side effects.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ *
+ * @param <T> the type of the first argument to the operation
+ * @param <U> the type of the second argument to the operation
+ * @param <V> the type of the third argument to the operation
+ * @param <W> the type of the fourth argument to the operation
+ * @param <X> the type of the fifth argument to the operation
+ * @param <Y> the type of the six argument to the operation
+ *
+ * @see Consumer
+ */
+@SuppressWarnings({"PMD.ShortVariable", "PMD.CommentSize"})
 @FunctionalInterface
 public interface HexaConsumer<T, U, V, W, X, Y> {
 
@@ -30,7 +49,7 @@ public interface HexaConsumer<T, U, V, W, X, Y> {
      * @throws NullPointerException if after is null
      */
     default HexaConsumer<T, U, V, W, X, Y> andThen(
-        HexaConsumer<? super T, ? super U, ? super V, ? super W, ? super X, ? super Y> after
+        final HexaConsumer<? super T, ? super U, ? super V, ? super W, ? super X, ? super Y> after
     ) {
         Objects.requireNonNull(after);
 

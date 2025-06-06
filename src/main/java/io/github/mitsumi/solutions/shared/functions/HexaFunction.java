@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 /**
- * Represents a function that accepts six argument and produces a result.
+ * Represents a function that accepts six arguments and produces a result.
  *
  * <p>This is a functional interface.
  * whose functional method is {@link #apply(Object, Object, Object, Object, Object, Object)}.
@@ -17,6 +17,8 @@ import java.util.function.Function;
  * @param <Y> the type of the input to the function
  * @param <R> the type of the result of the function
  */
+@FunctionalInterface
+@SuppressWarnings({"PMD.ShortVariable", "PMD.CommentSize"})
 public interface HexaFunction<T, U, V, W, X, Y, R> {
 
 
@@ -46,7 +48,7 @@ public interface HexaFunction<T, U, V, W, X, Y, R> {
      * applies the {@code after} function
      * @throws NullPointerException if after is null
      */
-    default <Z> HexaFunction<T, U, V, W, X, Y, Z> andThen(Function<? super R, ? extends Z> after) {
+    default <Z> HexaFunction<T, U, V, W, X, Y, Z> andThen(final Function<? super R, ? extends Z> after) {
         Objects.requireNonNull(after);
         return (T t, U u, V v, W w, X x, Y y) -> after.apply(apply(t, u, v, w, x, y));
     }
