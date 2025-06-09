@@ -1,8 +1,26 @@
 package io.github.mitsumi.solutions.shared.functions;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
+/**
+ * Represents an operation that accepts five input arguments and returns no
+ * result.  This is the five-arity specialization of {@link Consumer}.
+ * Unlike most other functional interfaces, {@code PentaConsumer} is expected
+ * to operate via side effects.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ *
+ * @param <T> the type of the first argument to the operation
+ * @param <U> the type of the second argument to the operation
+ * @param <V> the type of the third argument to the operation
+ * @param <W> the type of the fourth argument to the operation
+ * @param <X> the type of the fifth argument to the operation
+ *
+ * @see Consumer
+ */
 @FunctionalInterface
+@SuppressWarnings({"PMD.ShortVariable", "PMD.CommentSize"})
 public interface PentaConsumer<T, U, V, W, X> {
     /**
      * Performs this operation on the given arguments.
@@ -27,7 +45,7 @@ public interface PentaConsumer<T, U, V, W, X> {
      * @throws NullPointerException if after is null
      */
     default PentaConsumer<T, U, V, W, X> andThen(
-        PentaConsumer<? super T, ? super U, ? super V, ? super W, ? super X> after
+        final PentaConsumer<? super T, ? super U, ? super V, ? super W, ? super X> after
     ) {
         Objects.requireNonNull(after);
 
