@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.mitsumi-solutions-develop</groupId>
     <artifactId>java-functions</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
     <name>java-functions</name>
     <description>java functions</description>
@@ -176,7 +176,7 @@
                 <version>3.26.0</version>
                 <configuration>
                     <rulesets>
-                        <ruleset>${basedir}/pmd-rule-set.xml</ruleset>
+                        <ruleset>${basedir}/pmd/java-functions.xml</ruleset>
                     </rulesets>
                 </configuration>
             </plugin>
