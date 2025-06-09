@@ -3,8 +3,9 @@
   <component name="PMDPlugin">
     <option name="customRuleSets">
       <list>
-        <option value="$PROJECT_DIR$/pmd-rule-set.xml" />
-        <option value="$PROJECT_DIR$/../spring-json/pmd-rule-set.xml" />
+        <option value="$PROJECT_DIR$/pmd/java-functions.xml" />
+        <option value="$PROJECT_DIR$/../spring-json/pmd/spring-json.xml" />
+        <option value="$PROJECT_DIR$/../java-shared-utils/pmd/java-shared-utils.xml" />
       </list>
     </option>
     <option name="optionKeyToValue">
